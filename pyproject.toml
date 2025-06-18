@@ -1,0 +1,24 @@
+[project]
+name = "superprod2zeus"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Maxime Borry",email = "maxime.borry@tron-mainz.de"}
+]
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "pandas (>=2.3.0,<3.0.0)"
+]
+
+[tool.poetry]
+packages = [{include = "superprod2zeus"}]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+
+[tool.poetry.scripts]
+superprod2zeus = "superprod2zeus.__init__:main"
