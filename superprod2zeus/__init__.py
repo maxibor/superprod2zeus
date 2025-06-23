@@ -15,7 +15,7 @@ def compute_project_parts(worklog: str, output: str):
     logging.basicConfig(format="%(message)s", level=logging.INFO)
 
     df = pd.read_csv(worklog, sep=";")
-    df["Worked"] = pd.to_timedelta(df["Worked"] + ":00")
+    df["Worked"] = pd.to_timedelta(df["Worked"] + ":00", errors="coerce")
 
     daily_total = df.groupby("Date")["Worked"].sum().reset_index(name="Total_Worked")
 
